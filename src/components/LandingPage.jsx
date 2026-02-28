@@ -43,7 +43,7 @@ const resources = [
 ];
   
 const FloatingIcon = ({ Icon, delay, duration }) => {
-  // Hum position ko 'style' mein handle karenge, 'animate' mein nahi
+  // position ko style me set kr rha ye
   const randomX = Math.random() * 100;
   const randomY = Math.random() * 100;
 
@@ -185,7 +185,7 @@ const LandingPage = () => {
                     // Mega menu wrapper
                     className="absolute top-full -left-10 mt-2 z-50"
                   >
-                    {/*  AAPKA COMPONENT YAHAN AAYEGA */}
+                    
                     <ProductDropdown />
                   </motion.div>
                 )}
@@ -303,7 +303,7 @@ const LandingPage = () => {
 <header className="relative py-24 md:py-32 px-6 overflow-hidden pointer-events-none"> 
   <div className="absolute inset-0 bg-gradient-to-br from-[#dbeafe] via-[#e0e7ff] to-[#fae8ff]"></div>
   <div className="absolute inset-0 opacity-40 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-{/* 1. Static Icons (Increased Size - Brand Color) */}
+{/* 1. Static Icons  */}
   {[
     { icon: BsStars, top: '15%', left: '10%' },
     { icon: BsSearch, top: '20%', left: '80%' },
@@ -337,13 +337,13 @@ const LandingPage = () => {
           initial={{ 
             opacity: 0, 
             scale: 0.5,
-            // Shuruwat ki position
+            // starting position 
             left: `${randomLeft}%`,
             top: `${randomTop}%`
           }}
           animate={{ 
             opacity: [0, 0.7, 0], 
-            // Float karega apni jagah se thoda upar-neeche
+            // for floating from top to bottom
             y: [0, -30, 0], 
           }}
           transition={{ 
@@ -360,7 +360,7 @@ const LandingPage = () => {
   </div>
 
   <div className="relative z-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-    {/* Content ... */}
+    {/* Content  */}
     <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.6}}>
       <span className="inline-flex items-center gap-2 bg-white text-gray-900 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-gray-100 shadow-sm">
         <GoDotFill className="text-green-500 animate-pulse text-sm" />

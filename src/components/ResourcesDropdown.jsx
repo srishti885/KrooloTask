@@ -53,7 +53,7 @@ const ResourcesDropdown = () => {
         ))}
       </div>
       
-      {/*  BOTTOM ACTION BAR (TEXT + BUTTONS)  */}
+      {/*  BOTTOM ACTION BAR   */}
       <div className="mt-4 border-t border-gray-100 pt-4 px-2 flex justify-between items-center bg-gray-50/50 -m-4 -mb-4 p-4">
         
         {/* Instruction Text */}

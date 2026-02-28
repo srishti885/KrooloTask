@@ -22,7 +22,7 @@ const Loading = () => {
 
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-6">
-      {/* Static Logo - design fetch karlo */}
+      {/* Static Logo  */}
       <KrooloLogo size={100} className="text-[#4f1df2]" />
       
       {/* Dynamic Loading Text */}

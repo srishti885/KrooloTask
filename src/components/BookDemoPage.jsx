@@ -42,7 +42,7 @@ const BookDemoPage = () => {
   return (
     <div className="min-h-screen bg-white text-[#0f172a] font-sans antialiased">
       
-      {/* SECTION 1: HERO/FORM (Same as before) */}
+      {/* SECTION 1: HERO */}
       <section className="bg-slate-50 py-12 md:py-16">
         <div className="max-w-7xl mx-auto p-4">
           <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 grid md:grid-cols-5 overflow-hidden">
@@ -137,16 +137,16 @@ const BookDemoPage = () => {
         </div>
       </section>
       
-      {/* SECTION 2: MOVING TESTIMONIAL CAROUSEL (Updated) */}
+      {/* SECTION 2: MOVING TESTIMONIAL CAROUSEL */}
       <section className="py-20 bg-white overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-extrabold tracking-tighter text-[#0f172a] mb-12">See How Effortless Productivity Can Be With Kroolo</h2>
           
-          {/* !!! Color changed to Indigo !!! */}
+          
           <div className="bg-indigo-700 p-12 rounded-3xl text-white relative shadow-2xl min-h-[350px] flex flex-col justify-center">
             <FaQuoteLeft className="text-white/20 text-7xl absolute top-6 left-6" />
             
-            {/* !!! Enhanced Animation !!! */}
+           
             <div 
                 className={`relative z-10 transition-opacity duration-500 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} mb-8`}
             >
@@ -172,7 +172,7 @@ const BookDemoPage = () => {
         </div>
       </section>
 
-      {/* SECTION 3: FINAL CTA (Same as before) */}
+      {/* SECTION 3: FINAL CTA */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-10 bg-[#0f172a] p-12 rounded-3xl text-white shadow-2xl">
           <div className="flex items-center gap-6">

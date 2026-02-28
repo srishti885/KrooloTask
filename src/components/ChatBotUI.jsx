@@ -29,7 +29,7 @@ const ChatBotUI = () => {
       setInputValue('');
       setIsLoading(true);
 
-      // Simulate a delay for "thinking"
+      // Simulate a delay for thinking
       setTimeout(() => {
         let botReply = "I am currently in demo mode. Try asking about 'features' or 'pricing'!";
         const lowerInput = inputValue.toLowerCase();
@@ -51,7 +51,7 @@ const ChatBotUI = () => {
 
   return (
     <>
-      {/* CUTE ROBOT TOGGLE BUTTON  */}
+      {/* ROBOT TOGGLE BUTTON  */}
       <motion.button
         className="fixed bottom-6 right-6 bg-[#4f1df2] text-white rounded-full p-4 shadow-2xl z-[999999] flex items-center justify-center cursor-pointer overflow-hidden"
         whileHover={{ scale: 1.1, rotate: 10 }}
@@ -62,7 +62,7 @@ const ChatBotUI = () => {
         {isOpen ? <BsX size={35} /> : <BsRobot size={35} className="text-white" />}
       </motion.button>
 
-      {/*  CUTE ROBOT WINDOW  */}
+      {/* ROBOT WINDOW  */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -94,7 +94,7 @@ const ChatBotUI = () => {
                   }`}>
                     {msg.text}
                     
-                    {/*  BOOK DEMO BUTTON INSIDE MESSAGE  */}
+                    {/*  BOOK DEMO BUTTON  */}
                     {index === 0 && (
                       <button 
                         onClick={handleBookDemo}

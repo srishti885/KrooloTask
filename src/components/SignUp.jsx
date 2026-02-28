@@ -21,7 +21,7 @@ const Signup = () => {
   //  Hide loader when Clerk is loaded 
   useEffect(() => {
     if (isLoaded) {
-      // Thoda delay taaki animation dikhe
+      // for delay
       const timer = setTimeout(() => setShowLoader(false), 1000); 
       return () => clearTimeout(timer);
     }
@@ -44,7 +44,7 @@ const Signup = () => {
 
   return (
     <>
-      {/*  UPDATED: Conditional Rendering of Loader  */}
+      {/* Conditional Rendering of Loader  */}
       {showLoader && <Loading />}
 
       <div className={`min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 transition-opacity duration-500 ${showLoader ? 'opacity-0' : 'opacity-100'} relative`}>
@@ -74,7 +74,7 @@ const Signup = () => {
                 signInUrl="/login"
                 appearance={{
                   elements: {
-                    //  UPDATED: Simplified styling for glass effect
+                    // Simplified styling for glass effect
                     card: "shadow-none bg-transparent border-none", 
                     formButtonPrimary: 
                       "bg-[#4f1df2] hover:bg-[#3730a3] text-sm !shadow-none rounded-xl py-3",

@@ -3,8 +3,6 @@ import { SignIn, useAuth } from '@clerk/clerk-react';
 import { useNavigate } from 'react-router-dom';
 import KrooloLogo from './KrooloLogo';
 import Loading from './Loading';
-
-//  UPDATED: Added more icons
 import { BsLightningChargeFill, BsFillGearFill, BsCodeSquare, BsDiagram3Fill, BsCpuFill } from 'react-icons/bs';
 
 const Login = () => {
@@ -27,7 +25,7 @@ const Login = () => {
 
   // Floating Icons Background
   const FloatingIcons = () => (
-    <div className="absolute inset-0 z-0 overflow-hidden opacity-20"> {/* !!! UPDATED: Lower opacity for more icons !!! */}
+    <div className="absolute inset-0 z-0 overflow-hidden opacity-20"> {/*  Lower opacity for more icons */}
         {/* Original Icons */}
         <BsLightningChargeFill className="absolute top-10 left-10 text-[#4f1df2] text-6xl animate-float-slow" />
         <BsFillGearFill className="absolute bottom-20 right-20 text-purple-600 text-7xl animate-float-fast" />

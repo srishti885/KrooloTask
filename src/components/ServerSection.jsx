@@ -15,7 +15,7 @@ import {
 // Import React icon for floating
 import { FaReact } from "react-icons/fa";
 
-/* ================= SVG CONNECTION LINES ================= */
+/*  SVG CONNECTION LINES  */
 
 const ConnectionLines = () => {
   const lineVariants = {
@@ -33,7 +33,7 @@ const ConnectionLines = () => {
     strokeLinecap: "round",
   };
 
-  // --- SPECIFIC SINGLE PATH ---
+  // SPECIFIC SINGLE PATH 
   const mainPath = "M 50% 18% V 52% V 84%"; 
 
   const FlowDot = ({ path, delay }) => (
@@ -98,7 +98,7 @@ const ConnectionLines = () => {
   );
 };
 
-/* ================= BACKGROUND ICONS ================= */
+/* BACKGROUND ICONS  */
 
 const FloatingIcons = () => {
   const icons = Array.from({ length: 25 });
@@ -135,7 +135,7 @@ const FloatingIcons = () => {
   );
 };
 
-/* ================= MAIN SECTION ================= */
+/* MAIN ICONS  */
 
 const ServerSection = () => {
   const containerVariants = {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BsStars } from 'react-icons/bs';
-//  LOGO IMPORT 
 import KrooloLogo from './KrooloLogo'; 
 
 const KrooloActionSection = () => {
