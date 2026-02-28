@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BsStars } from 'react-icons/bs';
-// !!! LOGO IMPORT !!!
+//  LOGO IMPORT 
 import KrooloLogo from './KrooloLogo'; 
 
 const KrooloActionSection = () => {
@@ -13,7 +13,7 @@ const KrooloActionSection = () => {
     { src: "https://static.vecteezy.com/system/resources/previews/028/132/349/original/iso-27001-certified-badge-or-information-security-management-system-iso-27001-icon-rubber-stamp-seal-label-emblem-with-check-mark-glossy-and-golden-badge-illustration-vector.jpg", alt: "ISO 27001" },
   ];
 
-  // !!! ANIMATION VARIANTS !!!
+  //  ANIMATION VARIANTS 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,9 +35,9 @@ const KrooloActionSection = () => {
     <section className="bg-white py-12 md:py-20 px-6">
       <div className="max-w-7xl mx-auto">
         
-        {/* !!! CTA BANNER BLOCK (Animated & Large) !!! */}
+        {/*  CTA BANNER BLOCK   */}
         <motion.div
-          // !!! BANNER ANIMATION !!!
+          //  BANNER ANIMATION 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -81,7 +81,7 @@ const KrooloActionSection = () => {
           </div>
         </motion.div>
 
-        {/* !!! SECURITY & COMPLIANCE BLOCK !!! */}
+        {/*  SECURITY & COMPLIANCE BLOCK */}
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

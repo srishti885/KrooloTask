@@ -24,8 +24,7 @@ const ModernFooter = () => {
       title: "Resources",
       links: ["Help center", "Blogs", "Videos", "WhitePapers", "Changelog", "Feedback"]
     },
-    // Removed Compare, adding it to a grid in a real layout might be better, 
-    // but keeping it if you need it.
+    
   ];
 
   return (
@@ -94,7 +93,7 @@ const ModernFooter = () => {
           {/* APP BUTTONS */}
           <div className="flex items-center gap-3">
             <span className="text-white font-semibold text-xs">Get the app</span>
-            {/* !!! APPLE APP STORE LINK ADDED !!! */}
+            {/*  APPLE APP STORE LINK ADDED  */}
             <a 
               href="https://apps.apple.com/in/app/kroolo/id6740263578" 
               target="_blank" 
@@ -107,7 +106,7 @@ const ModernFooter = () => {
                 <span className="font-semibold text-xs leading-tight">App Store</span>
               </div>
             </a>
-            {/* !!! GOOGLE PLAY STORE LINK ADDED !!! */}
+            {/*  GOOGLE PLAY STORE LINK ADDED  */}
             <a 
               href="https://play.google.com/store/apps/details?id=com.kroolo.app&pli=1" 
               target="_blank" 

@@ -53,7 +53,7 @@ const FloatingIcon = ({ Icon, delay, duration }) => {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{
         opacity: [0, 0.5, 0],
-        // Yahan 'y' ko pixels mein rakhein ya relative value dein (bina % ke)
+    
         y: [0, -30, 0], 
       }}
       transition={{
@@ -76,7 +76,7 @@ const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState("https://www.youtube.com/embed/yTM3v5m4upk?autoplay=1&rel=0");
   
-  // !!! DROPDOWN STATE !!!
+  // DROPDOWN STATE 
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const videoList = [
@@ -91,7 +91,7 @@ const LandingPage = () => {
   };
 
 
-  // ... (Rest of components: cardDesignClass, items, animationProps, etc. remain same)
+  // (Rest of components: cardDesignClass, items, animationProps, etc. remain same)
   const cardDesignClass = "border border-gray-100 rounded-3xl p-8 bg-white flex flex-col transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#4f1df2]/10 hover:border-[#4f1df2]/20 relative overflow-hidden group hover:bg-gradient-to-br hover:from-sky-50 hover:to-pink-50";
   const cardGradientOverlay = "absolute inset-0 bg-gradient-to-br from-[#4f1df2]/0 via-[#4f1df2]/0 to-[#4f1df2]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300";
   const floatingIconClass = "absolute -bottom-6 -right-6 text-[120px] text-[#4f1df2]/5 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500";
@@ -185,7 +185,7 @@ const LandingPage = () => {
                     // Mega menu wrapper
                     className="absolute top-full -left-10 mt-2 z-50"
                   >
-                    {/* !!! AAPKA COMPONENT YAHAN AAYEGA !!! */}
+                    {/*  AAPKA COMPONENT YAHAN AAYEGA */}
                     <ProductDropdown />
                   </motion.div>
                 )}
@@ -215,7 +215,7 @@ const LandingPage = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full -left-10 mt-2 z-50"
                   >
-                    {/* !!! AAPKA COMPONENT YAHAN AAYEGA !!! */}
+                    
                     <SolutionsDropdown />
                   </motion.div>
                 )}
@@ -242,7 +242,7 @@ const LandingPage = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full -left-10 mt-2 z-50"
                   >
-                    {/* !!! AAPKA COMPONENT YAHAN AAYEGA !!! */}
+                    
                     <AIToolsDropdown />
                   </motion.div>
                 )}
@@ -269,7 +269,7 @@ const LandingPage = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full -left-10 mt-2 z-50"
                   >
-                    {/* !!! AAPKA COMPONENT YAHAN AAYEGA !!! */}
+                   
                     <ResourcesDropdown />
                   </motion.div>
                 )}
@@ -317,13 +317,13 @@ const LandingPage = () => {
         className="absolute text-[#4f1df2]/10 z-10" // Subtle Brand Color
         style={{ top: item.top, left: item.left }}
       >
-        {/* !!! CHANGE: SIZE INCREASED !!! */}
+        
         <Icon size={Math.random() * 30 + 50} /> 
       </div>
     );
   })}
 
-  {/* !!! FLOATING ICONS BACKGROUND !!! */}
+  {/*  FLOATING ICONS BACKGROUND  */}
   <div className="absolute inset-0 z-0 overflow-hidden"> 
     {[BsLightningChargeFill, BsFillGearFill, BsCodeSquare, BsDiagram3Fill, BsCpuFill, BsFolderFill].map((Icon, i) => {
       // Har icon ke liye random positions
@@ -550,7 +550,7 @@ const LandingPage = () => {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   }}
-  className="relative z-20" // Z-index bada diya hai
+  className="relative z-20" 
 >
             <motion.h1 
     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import KrooloLogo from './KrooloLogo';
 import Loading from './Loading';
 
-// !!! UPDATED: Added more icons !!!
+//  UPDATED: Added more icons
 import { BsLightningChargeFill, BsFillGearFill, BsCodeSquare, BsDiagram3Fill, BsCpuFill } from 'react-icons/bs';
 
 const Login = () => {
@@ -33,7 +33,7 @@ const Login = () => {
         <BsFillGearFill className="absolute bottom-20 right-20 text-purple-600 text-7xl animate-float-fast" />
         <BsCodeSquare className="absolute top-1/2 left-1/3 text-blue-500 text-5xl animate-float-slow" />
         
-        {/* !!! NEW ICONS & BLOBS !!! */}
+        {/*  NEW ICONS & BLOBS  */}
         <BsDiagram3Fill className="absolute top-1/3 right-1/4 text-purple-400 text-4xl animate-float-fast" />
         <BsCpuFill className="absolute bottom-1/4 left-1/2 text-blue-400 text-5xl animate-float-slow" />
         

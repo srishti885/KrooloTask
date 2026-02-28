@@ -40,7 +40,7 @@ const KrooloLogo = ({ size = 120, className = "" }) => {
         </linearGradient>
       </defs>
 
-      {/* Blue Vertical Stem of K - !!! UPDATED: Color change on hover !!! */}
+      {/* Blue Vertical Stem of K - UPDATED: colour change on hover */}
       <rect 
         x="25" y="15" width="15" height="70" rx="7.5" 
         fill="#1e40af" 

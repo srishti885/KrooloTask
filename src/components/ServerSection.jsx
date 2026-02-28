@@ -107,10 +107,10 @@ const FloatingIcons = () => {
       {icons.map((_, i) => (
         <motion.div
           key={i}
-          // Changed opacity from /10 to /5 for a darker, more subtle effect
+          
           className="absolute text-sky-500/20"
           initial={{
-            // Properly randomize initial position across the whole screen
+            // Properly randomize initial position
             x: Math.random() * 100 + "vw",
             y: Math.random() * 100 + "vh",
             rotate: 0,
@@ -122,7 +122,7 @@ const FloatingIcons = () => {
             rotate: [0, 360],
           }}
           transition={{
-            duration: Math.random() * 20 + 20, // Slower, more natural movement
+            duration: Math.random() * 20 + 20, // Slower
             repeat: Infinity,
             ease: "linear",
             delay: Math.random() * 5,

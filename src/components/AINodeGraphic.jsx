@@ -3,7 +3,7 @@ import { FaRobot, FaProjectDiagram, FaFileAlt, FaCommentAlt, FaCogs, FaSearch, F
 import { SiGoogleanalytics } from 'react-icons/si';
 import { VscLibrary } from 'react-icons/vsc';
 import { MdOutlineSecurity } from 'react-icons/md';
-import KrooloLogo from './KrooloLogo'; // !!! UPDATED: Imported the new logo !!!
+import KrooloLogo from './KrooloLogo'; 
 
 const AINodeGraphic = () => {
   const width = 800;

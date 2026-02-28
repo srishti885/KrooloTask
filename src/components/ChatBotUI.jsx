@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// !!! ICONS ONLY !!!
 import { BsRobot, BsSend, BsX, BsCalendarEvent } from 'react-icons/bs'; 
 import { useNavigate } from 'react-router-dom';
 
@@ -15,14 +14,14 @@ const ChatBotUI = () => {
 
   const toggleChat = () => setIsOpen(!isOpen);
 
-  // !!! BOOK DEMO FUNCTION !!!
+  // BOOK DEMO FUNCTION 
   const handleBookDemo = () => {
     setMessages(prev => [...prev, { type: 'user', text: "Book Demo" }]);
     setIsOpen(false);
-    navigate('/book-demo'); // !!! REPLACE WITH YOUR ACTUAL PAGE PATH !!!
+    navigate('/book-demo'); 
   };
 
-  // !!! MOCK/DEMO LOGIC !!!
+  //  MOCK/DEMO LOGIC 
   const handleSendMessage = () => {
     if (inputValue.trim()) {
       const userMessage = { type: 'user', text: inputValue };
@@ -52,7 +51,7 @@ const ChatBotUI = () => {
 
   return (
     <>
-      {/* !!! CUTE ROBOT TOGGLE BUTTON !!! */}
+      {/* CUTE ROBOT TOGGLE BUTTON  */}
       <motion.button
         className="fixed bottom-6 right-6 bg-[#4f1df2] text-white rounded-full p-4 shadow-2xl z-[999999] flex items-center justify-center cursor-pointer overflow-hidden"
         whileHover={{ scale: 1.1, rotate: 10 }}
@@ -63,7 +62,7 @@ const ChatBotUI = () => {
         {isOpen ? <BsX size={35} /> : <BsRobot size={35} className="text-white" />}
       </motion.button>
 
-      {/* !!! CUTE ROBOT WINDOW !!! */}
+      {/*  CUTE ROBOT WINDOW  */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -95,7 +94,7 @@ const ChatBotUI = () => {
                   }`}>
                     {msg.text}
                     
-                    {/* !!! BOOK DEMO BUTTON INSIDE MESSAGE !!! */}
+                    {/*  BOOK DEMO BUTTON INSIDE MESSAGE  */}
                     {index === 0 && (
                       <button 
                         onClick={handleBookDemo}

@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { SignUp, useAuth } from '@clerk/clerk-react';
 import { useNavigate } from 'react-router-dom';
 import KrooloLogo from './KrooloLogo';
-import Loading from './Loading'; // !!! UPDATED: Import Loading Component !!!
+import Loading from './Loading'; 
 
-// !!! UPDATED: Added Icons for Background !!!
 import { BsLightningChargeFill, BsFillGearFill, BsCodeSquare, BsDiagram3Fill, BsCpuFill } from 'react-icons/bs';
 
 const Signup = () => {
   const { isSignedIn, isLoaded } = useAuth();
   const navigate = useNavigate();
-  const [showLoader, setShowLoader] = useState(true); // !!! UPDATED: Loader state !!!
+  const [showLoader, setShowLoader] = useState(true); //  Loader state 
 
   // Redirect if already signed in
   useEffect(() => {
@@ -19,7 +18,7 @@ const Signup = () => {
     }
   }, [isSignedIn, navigate]);
 
-  // !!! UPDATED: Hide loader when Clerk is loaded !!!
+  //  Hide loader when Clerk is loaded 
   useEffect(() => {
     if (isLoaded) {
       // Thoda delay taaki animation dikhe
@@ -45,7 +44,7 @@ const Signup = () => {
 
   return (
     <>
-      {/* !!! UPDATED: Conditional Rendering of Loader !!! */}
+      {/*  UPDATED: Conditional Rendering of Loader  */}
       {showLoader && <Loading />}
 
       <div className={`min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 transition-opacity duration-500 ${showLoader ? 'opacity-0' : 'opacity-100'} relative`}>
@@ -75,7 +74,7 @@ const Signup = () => {
                 signInUrl="/login"
                 appearance={{
                   elements: {
-                    // !!! UPDATED: Simplified styling for glass effect !!!
+                    //  UPDATED: Simplified styling for glass effect
                     card: "shadow-none bg-transparent border-none", 
                     formButtonPrimary: 
                       "bg-[#4f1df2] hover:bg-[#3730a3] text-sm !shadow-none rounded-xl py-3",

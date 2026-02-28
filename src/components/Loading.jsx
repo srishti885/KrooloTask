@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import KrooloLogo from './KrooloLogo';
 
 const Loading = () => {
-  // !!! UPDATED: Dynamic loading messages !!!
   const [loadingText, setLoadingText] = useState("Initializing...");
   const messages = [
     "Fetching your profile...",

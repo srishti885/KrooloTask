@@ -11,12 +11,12 @@ const resources = [
 
 const ResourcesDropdown = () => {
   return (
-    // !!! ANIMATION WRAPPER !!!
+    //  ANIMATION WRAPPER 
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      // !!! OPAQUE STYLES (backdrop-blur) !!!
+      // OPAQUE STYLES (backdrop-blur)
       className="absolute top-full -left-10 mt-2 w-[700px] bg-white/95 backdrop-blur-sm border border-gray-100 rounded-3xl shadow-2xl shadow-black/5 p-4 z-50 overflow-hidden"
     >
       
@@ -53,7 +53,7 @@ const ResourcesDropdown = () => {
         ))}
       </div>
       
-      {/* !!! BOTTOM ACTION BAR (TEXT + BUTTONS) !!! */}
+      {/*  BOTTOM ACTION BAR (TEXT + BUTTONS)  */}
       <div className="mt-4 border-t border-gray-100 pt-4 px-2 flex justify-between items-center bg-gray-50/50 -m-4 -mb-4 p-4">
         
         {/* Instruction Text */}
