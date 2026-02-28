@@ -12,18 +12,16 @@ import {
   BsRobot,
   BsGlobe,
 } from "react-icons/bs";
-// Import React icon for floating
 import { FaReact } from "react-icons/fa";
 
-/*  SVG CONNECTION LINES  */
-
+/* UPDATED SVG CONNECTION LINES WITH SCAN EFFECT  */
 const ConnectionLines = () => {
   const lineVariants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: {
       pathLength: 1,
-      opacity: 0.8,
-      transition: { duration: 2, ease: "easeInOut", delay: 0.3 },
+      opacity: 0.6,
+      transition: { duration: 1.5, ease: "easeInOut" },
     },
   };
 
@@ -33,12 +31,23 @@ const ConnectionLines = () => {
     strokeLinecap: "round",
   };
 
-  // SPECIFIC SINGLE PATH 
-  const mainPath = "M 50% 18% V 52% V 84%"; 
+  // CURVED PATHS
+  const paths = [
+    "M 150 160 C 250 160, 300 250, 380 250",
+    "M 150 255 C 250 255, 300 260, 380 260",
+    "M 150 350 C 250 350, 300 270, 380 270",
+    "M 150 445 C 250 445, 300 280, 380 280",
+    "M 150 540 C 250 540, 300 290, 380 290",
+    "M 500 270 C 600 270, 650 150, 780 150",
+    "M 500 270 C 600 270, 650 220, 780 220",
+    "M 500 270 C 600 270, 650 290, 780 290",
+    "M 500 270 C 600 270, 650 360, 780 360",
+    "M 500 270 C 600 270, 650 430, 780 430",
+  ];
 
   const FlowDot = ({ path, delay }) => (
     <motion.circle
-      r="2.5"
+      r="3"
       fill="#38bdf8"
       filter="url(#glow)"
       initial={{ offsetDistance: "0%" }}
@@ -54,98 +63,105 @@ const ConnectionLines = () => {
   );
 
   return (
-    <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+    <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 1000 600" preserveAspectRatio="none">
       <defs>
         <filter id="glow">
-          <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
           <feMerge>
             <feMergeNode in="coloredBlur" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
-
-        <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#38bdf8" stopOpacity="0" />
-          <stop offset="50%" stopColor="#38bdf8" stopOpacity="1" />
-          <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+        {/* Scan Line Gradient  */}
+        <linearGradient id="scanGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#38bdf8" stopOpacity="0" />
+            <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
         </linearGradient>
       </defs>
 
       <g>
+        {/* SCANNING VERTICAL LINE EFFECT */}
         <motion.path
-          d={mainPath}
-          {...lineStyle}
-          stroke="#1f2937"
-          variants={lineVariants}
-          initial="hidden"
-          whileInView="visible"
+            d="M 500 0 V 600"
+            stroke="url(#scanGradient)"
+            strokeWidth="2"
+            animate={{ x: [-300, 300, -300] }} // Sweeping back and forth
+            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+            filter="url(#glow)"
         />
 
-        <motion.path
-          d={mainPath}
-          {...lineStyle}
-          stroke="url(#flowGradient)"
-          filter="url(#glow)"
-          variants={lineVariants}
-          initial="hidden"
-          whileInView="visible"
-        />
-
-        <FlowDot path={mainPath} delay={0} />
-        <FlowDot path={mainPath} delay={1.5} />
+        {/* Connections */}
+        {paths.map((path, index) => (
+          <React.Fragment key={index}>
+            <motion.path
+              d={path}
+              {...lineStyle}
+              stroke="#1e293b"
+              variants={lineVariants}
+              initial="hidden"
+              whileInView="visible"
+            />
+            <motion.path
+              d={path}
+              {...lineStyle}
+              stroke="#38bdf8"
+              strokeOpacity="0.3"
+              variants={lineVariants}
+              initial="hidden"
+              whileInView="visible"
+            />
+            <FlowDot path={path} delay={index * 0.4} />
+          </React.Fragment>
+        ))}
       </g>
     </svg>
   );
 };
 
-/* BACKGROUND ICONS  */
-
+/* Floating Icons */
 const FloatingIcons = () => {
-  const icons = Array.from({ length: 25 });
+  const icons = Array.from({ length: 20 });
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {icons.map((_, i) => (
         <motion.div
           key={i}
-          
-          className="absolute text-sky-500/20"
+          className="absolute text-sky-500/10"
           initial={{
-            // Properly randomize initial position
             x: Math.random() * 100 + "vw",
             y: Math.random() * 100 + "vh",
             rotate: 0,
           }}
           animate={{
-            // Animate movement to another random position
             x: [null, Math.random() * 100 + "vw"],
             y: [null, Math.random() * 100 + "vh"],
             rotate: [0, 360],
           }}
           transition={{
-            duration: Math.random() * 20 + 20, // Slower
+            duration: Math.random() * 20 + 20,
             repeat: Infinity,
             ease: "linear",
             delay: Math.random() * 5,
           }}
         >
-          <FaReact size={Math.random() * 30 + 15} />
+          <FaReact size={Math.random() * 20 + 10} />
         </motion.div>
       ))}
     </div>
   );
 };
 
-/* MAIN ICONS  */
-
+/* Main Section*/
 const ServerSection = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
   const leftPanels = [
@@ -182,12 +198,10 @@ const ServerSection = () => {
 
   return (
     <section className="py-24 px-6 bg-[#030305] text-white overflow-hidden relative">
-      {/* Floating Icons Background */}
       <FloatingIcons />
 
-      {/* Grid Background */}
       <div
-        className="absolute inset-0 opacity-[0.2] z-10"
+        className="absolute inset-0 opacity-[0.1] z-10"
         style={{
           backgroundImage:
             "linear-gradient(#555555 1px, transparent 1px), linear-gradient(90deg, #555555 1px, transparent 1px)",
@@ -195,16 +209,12 @@ const ServerSection = () => {
         }}
       />
 
-      {/* Scanning Line Effect */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-sky-500/20 shadow-[0_0_15px_4px_rgba(56,189,248,0.5)] animate-scan z-20"></div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-extrabold tracking-tighter mb-6">
             GenAI isn't an add-on; <br />
             <span className="text-sky-400">it's our core</span>
           </h2>
-
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Kroolo's supercharged AI is built into every pixel. Experience the
             power of multiple LLMs orchestrated intelligently across all your
@@ -213,6 +223,9 @@ const ServerSection = () => {
         </div>
 
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 p-12 bg-[#060608] rounded-3xl border border-gray-800 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+          {/*SCANNING LINE EFFECT */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-sky-500/20 shadow-[0_0_15px_4px_rgba(56,189,248,0.5)] animate-scan z-20"></div>
+          
           <ConnectionLines />
 
           {/* LEFT PANELS */}
@@ -220,17 +233,13 @@ const ServerSection = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            className="flex flex-col gap-4 relative z-10"
+            className="flex flex-col gap-6 relative z-10"
           >
             {leftPanels.map((panel, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{
-                  scale: 1.05,
-                  borderColor: "#38bdf8",
-                  backgroundColor: "#0c0c0e",
-                }}
+                whileHover={{ scale: 1.05, borderColor: "#38bdf8" }}
                 className="flex items-center gap-4 bg-[#0a0a0c] p-5 rounded-2xl border border-gray-800 cursor-pointer"
               >
                 <panel.icon className="w-6 h-6 text-gray-400" />
@@ -244,7 +253,7 @@ const ServerSection = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            className="flex flex-col items-center justify-between relative z-10"
+            className="flex flex-col items-center justify-center relative z-10"
           >
             <div className="flex flex-col gap-4 w-full">
               {centerNodes.map((node, index) => (
@@ -272,7 +281,7 @@ const ServerSection = () => {
                   }}
                   className="bg-[#0a0a0c] p-3 rounded-full border border-gray-800"
                 >
-                  <ext.icon className={`w-6 h-6 ${ext.color}`} />
+                  <ext.icon className={`w-5 h-5 ${ext.color}`} />
                 </motion.div>
               ))}
             </div>
@@ -283,7 +292,7 @@ const ServerSection = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            className="flex flex-col gap-3 relative z-10"
+            className="flex flex-col gap-4 relative z-10"
           >
             {rightFeatures.map((feature, index) => (
               <motion.div
@@ -301,18 +310,6 @@ const ServerSection = () => {
           </motion.div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes scan {
-          0% { top: 0%; opacity: 0; }
-          10% { opacity: 0.5; }
-          90% { opacity: 0.5; }
-          100% { top: 100%; opacity: 0; }
-        }
-        .animate-scan {
-          animation: scan 6s linear infinite;
-        }
-      `}</style>
     </section>
   );
 };
